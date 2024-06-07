@@ -35,7 +35,7 @@ Puedes usar Docker Registry como registro de contenedores local. Puedes ejecutar
 8. Verificar en el manifiest.yaml
    containers:
       - name: myapp-container
-        image: pool-79eh506b3-rx5gm/myapp-image:latest # Reemplaza esto con la imagen de la Aplicación
+        image: localhost:5000/myapp-image:latest # Reemplaza esto con la imagen de la Aplicación
         ports:
         - containerPort: 80
           
@@ -49,3 +49,12 @@ Opcional:
 Si quieres exponer tu aplicación usando un servicio de tipo NodePort, puedes crear un archivo YAML
 Comando:
         kubectl apply -f nombre-del-archivo.yaml
+
+Verificar el servicio
+  Comando: 
+          kubectl get svc myapp-service
+Verificar IP 
+kubectl get nodes -o wide
+
+Colocar en el navegador:
+http://157.245.88.192:31672/
