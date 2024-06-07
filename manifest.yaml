@@ -1,33 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: holamundo-deployment
+  name: myapp-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: holamundo
+      app: myapp
   template:
     metadata:
       labels:
-        app: holamundo
+        app: myapp
     spec:
       containers:
-      - name: holamundo-container
-        image: tu_usuario_docker/holamundo:latest
+      - name: myapp-container
+        image: yarielistorres/holamundo:latest  # Reemplaza esto con la imagen de tu aplicación en Docker Hub
         ports:
         - containerPort: 80
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: holamundo-service
-spec:
-  type: LoadBalancer
-  selector:
-    app: holamundo
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
-
