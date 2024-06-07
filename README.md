@@ -26,7 +26,7 @@ Puedes usar Docker Registry como registro de contenedores local. Puedes ejecutar
         
 6. Etiqueta tu imagen para que apunte al registro local
   Comando:
-          docker tag myapp-image:tagname localhost:5000/myapp-image:tagname
+          docker tag myapp-image:latest localhost:5000/myapp-image:latest
 
 7. Sube la imagen etiquetada al registro local (opcional: se debe hacer solo si la imagen es local)
   Comando:
