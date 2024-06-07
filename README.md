@@ -19,14 +19,14 @@ doctl auth init
    Comando:
            docker build -t myapp-image .
 
-5.Configurar un registro de contenedores local:
+5.Etiqueta tu imagen para que apunte al registro local
+  Comando:
+          docker tag myapp-image:latest localhost:5000/myapp-image:latest
+
+6. Configurar un registro de contenedores local:
 Puedes usar Docker Registry como registro de contenedores local. Puedes ejecutar un contenedor Docker Registry en tu nodo Kubernetes
   Comando:
           docker run -d -p 5000:5000 --restart=always --name registry registry:2
-        
-6. Etiqueta tu imagen para que apunte al registro local
-  Comando:
-          docker tag myapp-image:latest localhost:5000/myapp-image:latest
 
 7. Sube la imagen etiquetada al registro local (opcional: se debe hacer solo si la imagen es local)
   Comando:
@@ -42,6 +42,8 @@ Puedes usar Docker Registry como registro de contenedores local. Puedes ejecutar
 9. Aplicar
     Comando:
            kubectl apply -f manifest.yaml
+           kubectl get pods
+           kubectl get nodes
 
 Opcional:
 Si quieres exponer tu aplicación usando un servicio de tipo NodePort, puedes crear un archivo YAML
