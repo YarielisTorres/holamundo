@@ -5,7 +5,7 @@ doctl auth init
 
 1. Creación el Kubernete
   Comando:
-          doctl kubernetes cluster node-pool update mipruebakubernet mynodo --auto-scale --min-nodes 1 --max-nodes 1
+          doctl kubernetes cluster create myapp-prueba --region nyc1 --node-pool "name=minodo;size=s-1vcpu-2gb;auto-scale=true;min-nodes=1;max-nodes=1"
    
 2. Configurar el Kubernete
   Comando:
