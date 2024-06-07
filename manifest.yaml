@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: myapp-container
-        image: pool-1w530pn49/myapp-image:latest # Reemplaza esto con la imagen de tu aplicación en Docker Hub
+        image: pool-1w530pn49-rxdmc/myapp-image:latest # Reemplaza esto con la imagen de tu aplicación en Docker Hub
         ports:
         - containerPort: 80
