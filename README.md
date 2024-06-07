@@ -14,7 +14,7 @@ doctl auth init
   Comando:
           kubectl get nodes
    
-4. Crear una imagen en Dockerhub de la Aplicación
+4. Crear una imagen en Dockerhub de la Aplicación (Si se hace local se debe clonar el repo )
   En caso de no poder crearla en docker hub, se crea directamente en el nodo 
    Comando:
            docker build -t myapp-image .
